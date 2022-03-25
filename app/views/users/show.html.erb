@@ -1,0 +1,8 @@
+<h1><%= @user.name %>のページ</h1>
+<p>メールアドレス: <%= @user.email %></p>
+<br/>
+<%= link_to "edit account", edit_user_path(@user.id) %>
+<%= link_to "delete your account", @user, method: :delete,
+                                  data: { confirm: "Are You sure?" } %>
+<%= link_to "Tasks", tasks_path %>
+<%= link_to "Logout", logout_path, method: :delete, :class => 'navbar-link'  %>
