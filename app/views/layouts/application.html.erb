@@ -10,6 +10,14 @@
   </head>
 
   <body>
+  <% if logged_in? %>
+    <%= link_to "Task", tasks_path %>
+    <%= link_to "Profile", user_path(current_user.id) %>
+    <%= link_to "Logout", session_path(current_user.id), method: :delete %>
+    <% else %>
+    <%= link_to "Sign in", new_user_path %>
+    <%= link_to "Log in", new_session_path %>
+<% end %>
     <p id="notice"><%= notice %></p>
     <%= yield %>
   </body>
